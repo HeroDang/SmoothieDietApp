@@ -5,17 +5,39 @@ import { SmoothieGuidePage } from './smoothie-guide.page';
 
 const routes: Routes = [
   {
+    path: 'tabs',
+    component: SmoothieGuidePage,
+    children: [
+      {
+        path: 'e-book',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('./e-book/e-book.module').then( m => m.EBookPageModule)
+          },
+        ],
+      },
+      {
+        path: 'guide',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('./guide/guide.module').then( m => m.GuidePageModule)
+          },
+        ],
+      },
+      {
+        path: '',
+        redirectTo: '/smoothie-guide/tabs/e-book',
+        pathMatch: 'full',
+      },
+    ],
+  },
+  {
     path: '',
-    component: SmoothieGuidePage
+    redirectTo: '/smoothie-guide/tabs/e-book',
+    pathMatch: 'full',
   },
-  {
-    path: 'e-book',
-    loadChildren: () => import('./e-book/e-book.module').then( m => m.EBookPageModule)
-  },
-  {
-    path: 'guide',
-    loadChildren: () => import('./guide/guide.module').then( m => m.GuidePageModule)
-  }
 ];
 
 @NgModule({
