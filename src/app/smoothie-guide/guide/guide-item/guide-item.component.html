@@ -1,3 +1,8 @@
-<ion-item lines="none">
-  <ion-label>{{title}}</ion-label>
+<ion-item lines="none" class="container">
+  <ion-text class="title-book">{{bookName}}</ion-text>
+  <ion-list>
+    <ion-item *ngFor="let title of titles" lines="none" class="ion-margin-top">
+      <ion-label>{{title}}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-item>

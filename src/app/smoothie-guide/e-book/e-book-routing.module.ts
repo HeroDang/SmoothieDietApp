@@ -7,6 +7,18 @@ const routes: Routes = [
   {
     path: '',
     component: EBookPage
+  },
+  {
+    path: 'bookdetox',
+    loadChildren: () => import('./bookdetox/bookdetox.module').then( m => m.BookdetoxPageModule)
+  },
+  {
+    path: 'bookquickstart',
+    loadChildren: () => import('./bookquickstart/bookquickstart.module').then( m => m.BookquickstartPageModule)
+  },
+  {
+    path: 'booksmoothiediet',
+    loadChildren: () => import('./booksmoothiediet/booksmoothiediet.module').then( m => m.BooksmoothiedietPageModule)
   }
 ];
 

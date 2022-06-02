@@ -6,7 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./guide-item.component.scss'],
 })
 export class GuideItemComponent implements OnInit {
-  @Input() title: string;
+  @Input() titles: string[];
+  @Input() bookName: string;
 
   constructor() { }
 

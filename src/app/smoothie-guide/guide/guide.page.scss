@@ -9,7 +9,20 @@ ion-toolbar ion-title{
   font-weight: bold;
 }
 
-ion-text.title-book{
-  font-size: 36px;
+ion-list{
+  width: 100%;
+}
+
+ion-list ion-item{
+  --color-hover: red;
+  --color:  #06D6A0;
+  --background: white;
+  --min-height: 50px;
+  --border-width: 4px;
+  --border-color: #06D6A0;
+  --border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
   font-weight: bold;
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SmoothieGuideService } from '../smoothie-guide.service';
 
 @Component({
   selector: 'app-guide',
@@ -6,11 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./guide.page.scss'],
 })
 export class GuidePage implements OnInit {
-  subtitle:string = '21 Day Smoothie Diet';
+  titles:string[] = ['hung', 'nhien','dang'];
+  titles1:string[] = ['hung', 'nhien','dang', 'nhien','dang', 'nhien','dang', 'nhien','dang', 'nhien','dang'];
+  bookName: string = '3 Day Detox';
+  show3Day = false;
+  show21Day = false;
 
-  constructor() { }
+  constructor(private smoothieGuideService: SmoothieGuideService) { }
 
   ngOnInit() {
+  }
+
+  onShow3Day(){
+    this.show3Day = true;
   }
 
 }
