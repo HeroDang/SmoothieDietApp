@@ -1,0 +1,15 @@
+ion-toolbar{
+    --background: #06D6A0;
+    --color: white;
+    --min-height: 50px 
+
+}
+  
+  ion-toolbar ion-title{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+ion-back-button {
+    color: white;
+}

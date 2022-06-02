@@ -4,10 +4,15 @@
       <ion-back-button defaultHref="/smoothie-guide/tabs/e-book"></ion-back-button>
     </ion-buttons>
 
-    <ion-title>booksmoothiediet</ion-title>
+    <ion-title>21 Day Diet</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-list>
+    <div *ngFor="let i of nguon">
+      <ion-img [src]="i"></ion-img>
+    </div>
+  </ion-list>
 
 </ion-content>
