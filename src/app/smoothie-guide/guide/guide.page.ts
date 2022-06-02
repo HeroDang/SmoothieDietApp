@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./guide.page.scss'],
 })
 export class GuidePage implements OnInit {
+  subtitle:string = '21 Day Smoothie Diet';
 
   constructor() { }
 
