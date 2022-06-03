@@ -32,6 +32,7 @@ export class DayDetailPage implements OnInit {
           this.smoothie = smo;
         }
       }
+      console.log(this.smoothie);
     });
   }
 

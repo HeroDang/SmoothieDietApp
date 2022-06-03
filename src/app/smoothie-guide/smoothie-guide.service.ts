@@ -24,6 +24,7 @@ export class SmoothieGuideService {
   private _shoppingListDetox = new ShoppingList(
     '3day',
     'Detox Shopping List',
+    // eslint-disable-next-line no-underscore-dangle
     this._bookDetox.id,
     [
       {
@@ -49,6 +50,7 @@ export class SmoothieGuideService {
     new ShoppingList(
       'w1',
       'Week 1 Shopping List',
+      // eslint-disable-next-line no-underscore-dangle
       this._bookSmoothie.id,
       [
         {
@@ -218,26 +220,31 @@ export class SmoothieGuideService {
   }
 
   get bookDetox(){
+    // eslint-disable-next-line no-underscore-dangle
     return this._bookDetox;
   }
 
   get bookSmoothie(){
+    // eslint-disable-next-line no-underscore-dangle
     return this._bookSmoothie;
   }
 
   get shoppingListDetox(){
+    // eslint-disable-next-line no-underscore-dangle
     return this._shoppingListDetox;
   }
 
   get shoppingListSmoothie(){
+    // eslint-disable-next-line no-underscore-dangle
     return this._shoppingListSmoothie;
   }
 
   get dayDetox(){
+    // eslint-disable-next-line no-underscore-dangle
     return this._dayDetox;
   }
 
-  get dayDiet(){
+  get dayDiet(){// eslint-disable-next-line no-underscore-dangle
     return this._dayDiet;
   }
 
