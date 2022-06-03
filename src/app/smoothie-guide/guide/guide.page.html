@@ -11,7 +11,22 @@
         <ion-list>
           <ion-list-header (click)="onShow3Day()">{{bookName}}</ion-list-header>
           <div *ngIf="show3Day">
-            <ion-item *ngFor="let title of titles" lines="none" class="ion-margin-top">
+            <ion-item
+             lines="none"
+             class="ion-margin-top"
+             [routerLink]="[
+              '/',
+              'smoothie-guide',
+              'tabs',
+              'guide',
+              'shppinglist',
+              bookDetox.id
+            ]"
+            >
+              <ion-label>{{titles[0]}}</ion-label>
+            </ion-item>
+
+            <ion-item *ngFor="let title of titles.slice(1)" lines="none" class="ion-margin-top">
               <ion-label>{{title}}</ion-label>
             </ion-item>
           </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Book } from '../book.module';
 import { SmoothieGuideService } from '../smoothie-guide.service';
 
 @Component({
@@ -11,16 +12,14 @@ export class GuidePage implements OnInit {
   titles1:string[] = this.smoothieGuideService.bookSmoothie.component;
   bookName: string = this.smoothieGuideService.bookDetox.title;
   bookName2: string = this.smoothieGuideService.bookSmoothie.title;
+  bookDetox: Book = this.smoothieGuideService.bookDetox;
   show3Day = false;
   show21Day = false;
 
-
   constructor(private smoothieGuideService: SmoothieGuideService) { }
-
 
   ngOnInit() {
   }
-
 
   onShow3Day(){
     this.show3Day = !this.show3Day;

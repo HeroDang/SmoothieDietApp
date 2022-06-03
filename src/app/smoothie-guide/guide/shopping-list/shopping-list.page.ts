@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { NavController } from '@ionic/angular';
+import { ShoppingList } from '../../shoppinglist.module';
+import { SmoothieGuideService } from '../../smoothie-guide.service';
 
 @Component({
   selector: 'app-shopping-list',
@@ -6,10 +10,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shopping-list.page.scss'],
 })
 export class ShoppingListPage implements OnInit {
+  shoppingList: ShoppingList
 
-  constructor() { }
+  constructor(
+    private navCtrl: NavController,
+    private route: ActivatedRoute,
+    private smoothieGuideService: SmoothieGuideService
+  ) { }
 
   ngOnInit() {
-  }
-
+    this.route.paramMap.subscribe(paramMap => {
+      if (!paramMap.has('listId')) {
+        this.navCtrl.navigateBack('/smoothie-guide/tabs/guide');
+        return;
+      }
+      this.shoppingList = this.smoothieGuideService.shoppingListDetox;
+    })
+  };
 }
+
+
