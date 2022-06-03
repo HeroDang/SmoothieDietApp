@@ -12,6 +12,13 @@ import { SmoothieGuideService } from '../../smoothie-guide.service';
 export class DayDetailPage implements OnInit {
   dayDetail: DayDetail;
   smoothie: {
+    id: string;
+    title: string;
+    description: string;
+    imageUrl: string;
+    introduce: string;
+    ingredients: string[];
+    directions: string[];
   };
 
   constructor(
@@ -29,7 +36,7 @@ export class DayDetailPage implements OnInit {
       this.dayDetail = this.smoothieGuideService.getDayDetox(paramMap.get('dayId'));
       for(const smo of this.dayDetail.smoothie){
         if(smo.id === paramMap.get('smoothieId')){
-          this.smoothie = smo;
+          this.smoothie = {...smo};
         }
       }
       console.log(this.smoothie);

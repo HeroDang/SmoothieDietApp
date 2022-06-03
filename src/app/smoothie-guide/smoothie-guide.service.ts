@@ -187,6 +187,64 @@ export class SmoothieGuideService {
 
   private _dayDiet: DayDetail[] = [
     new DayDetail(
+      'd1',
+      'Day 1',
+      // 'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
+      this.bookDetox.id,
+      [
+        {
+          id: 'sm1',
+          title: 'Ginger Raspberry',
+          description: 'Parsley is naturally detoxifying herb that has plenty of nutrients, and a zippy flavor. You wouldn’t think it would be good in a smoothie, but paired with the right ingredients, it’s delicious. Serves 1',
+          imageUrl: 'url image',
+          introduce: 'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
+          ingredients:[
+            '1 cup/8oz filtered water',
+            '1 handful (1cup/1oz/30g) spinach',
+            '2 tbsp ground flax seed',
+            '1 tbsp ground chia seeds',
+            '1 green apple',
+            '1/2 ripened pear',
+            '1/4 cup parsley',
+            '1/2 cup ice',
+          ],
+          directions:[
+            'Put all of the ingredients in a blender and blend until smooth and creamy'
+          ],
+        }
+      ]
+    ),
+
+    new DayDetail(
+      'd2',
+      'Day 2',
+      // 'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
+      this.bookDetox.id,
+      [
+        {
+          id: 'sm1',
+          title: 'Ginger Raspberry',
+          description: 'Parsley is naturally detoxifying herb that has plenty of nutrients, and a zippy flavor. You wouldn’t think it would be good in a smoothie, but paired with the right ingredients, it’s delicious. Serves 1',
+          imageUrl: 'url image',
+          introduce: 'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
+          ingredients:[
+            '1 cup/8oz filtered water',
+            '1 handful (1cup/1oz/30g) spinach',
+            '2 tbsp ground flax seed',
+            '1 tbsp ground chia seeds',
+            '1 green apple',
+            '1/2 ripened pear',
+            '1/4 cup parsley',
+            '1/2 cup ice',
+          ],
+          directions:[
+            'Put all of the ingredients in a blender and blend until smooth and creamy'
+          ],
+        }
+      ]
+    ),
+
+    new DayDetail(
       'd3',
       'Day 3',
       // 'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
@@ -251,6 +309,11 @@ export class SmoothieGuideService {
   getDayDetox(id: string){
     // eslint-disable-next-line no-underscore-dangle
     return {...this._dayDetox.find(d => d.id === id)};
+  }
+
+  getDayDiet(id: string){
+    // eslint-disable-next-line no-underscore-dangle
+    return {...this._dayDiet.find(d => d.id === id)};
   }
 
 }
