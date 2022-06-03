@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bookquickstart.page.scss'],
 })
 export class BookquickstartPage implements OnInit {
-  public nguon = ['../../../../assets/Image/QS.PNG,',
+  public nguon = ['../../../../assets/Image/QS.PNG',
         '../../../../assets/Image/QS1.PNG',
         '../../../../assets/Image/QS2.PNG',
         '../../../../assets/Image/QS3.PNG',

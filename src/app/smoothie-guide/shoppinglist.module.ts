@@ -5,8 +5,8 @@ export class ShoppingList {
     public bookId: string,
     public ingredients:
       {
-        title:string,
-        component: string[]
+        title: string;
+        component: string[];
       }[]
   ){}
 }

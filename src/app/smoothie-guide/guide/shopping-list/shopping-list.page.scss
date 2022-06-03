@@ -1,0 +1,42 @@
+ion-toolbar{
+    --background: #06D6A0;
+    --color: white;
+    --min-height: 50px 
+
+}
+  
+ion-toolbar ion-title{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+ion-back-button {
+    color:white;
+}
+
+ion-list{
+    display:flex;
+    flex-direction:column;
+    width: 100%;
+  }
+  
+ion-list-header{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+ion-list ion-text {
+    font-size: 20px;
+}
+
+ion-button {
+    position:absolute;
+    width:80%;
+    justify-content: center;
+    margin:35px;
+    bottom:0%;
+    background-color:#DB4437;
+    color: #FFFFFF;
+    font-weight: bold ;
+
+}
