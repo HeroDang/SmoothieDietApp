@@ -29,11 +29,15 @@ ion-list ion-text {
     font-size: 20px;
 }
 
+ion-grid{
+    margin-bottom: 40px;
+}
+
 ion-button {
-    position:absolute;
-    width:80%;
+    position:fixed;
+    width:100%;
     justify-content: center;
-    margin:35px;
+    margin:0px;
     bottom:0%;
     background-color:#DB4437;
     color: #FFFFFF;

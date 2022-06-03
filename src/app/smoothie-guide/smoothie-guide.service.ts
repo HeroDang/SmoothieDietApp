@@ -12,14 +12,14 @@ export class SmoothieGuideService {
     '3 Day Detox',
     // this.shoppingListDetox,
     // this.dayDetox,
-  )
+  );
 
   private _bookSmoothie = new Book(
     'b21',
     'The Smoothie Diet',
     // this.shoppingListSmoothie,
     // this.dayDetox,
-  )
+  );
 
   private _shoppingListDetox = new ShoppingList(
     '3day',
@@ -43,7 +43,7 @@ export class SmoothieGuideService {
         'Fresh Ginger (3 inch piece)']
       }
     ]
-  )
+  );
 
   private _shoppingListSmoothie: ShoppingList[] = [
     new ShoppingList(
@@ -92,7 +92,7 @@ export class SmoothieGuideService {
         }
       ]
     )
-  ]
+  ];
 
   private _dayDetox: DayDetail[] = [
     new DayDetail(

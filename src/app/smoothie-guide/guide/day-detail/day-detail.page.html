@@ -9,23 +9,20 @@
 </ion-header>
 
 <ion-content>
-  <ion-text id="day1">Day 1: Green Apple Parsley</ion-text>
+  <ion-text id="day1">{{dayDetail.title}}</ion-text>
   <ion-text id="intro">
-    Parsley is naturally detoxifying herb that has plenty of nutrients, and a zippy flavor. You wouldn’t think it would be good in a smoothie, but paired with the right ingredients, it’s delicious.
+    {{dayDetail.description}}
   </ion-text>
-        <ion-list id ="ingredients">
-          <ion-list-header>Ingredients</ion-list-header>
-          <ion-text>1 cup/8oz filtered water</ion-text>
-        <ion-text>1 handful (1cup/1oz/30g) spinach</ion-text>
-        <ion-text>2 tbsp ground flax seed</ion-text>
-        <ion-text>1 tbsp ground chia seeds</ion-text>
-        <ion-text>1 green apple</ion-text>
-        <ion-text>1/2 ripened pear</ion-text>
-        <ion-text>1/4 cup parsley</ion-text>
-        <ion-text>1/2 cup ice</ion-text>
-        </ion-list>
-        <ion-button color="white">
-          Check
-        </ion-button>
+  <ion-list id ="ingredients" >
+    <ion-list-header>Ingredients</ion-list-header>
+    <ion-text *ngFor="let i of dayDetail.smoothie[0].ingredients">{{i}}</ion-text>
+  </ion-list>
+  <ion-list id="directions" >
+    <ion-list-header>Directions</ion-list-header>
+    <ion-text *ngFor="let i of dayDetail.smoothie[0].directions">{{i}}</ion-text>
+  </ion-list>
+  <ion-button color="white">
+    Check
+  </ion-button>
 
 </ion-content>

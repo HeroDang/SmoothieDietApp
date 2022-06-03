@@ -1,5 +1,4 @@
-import { DayDetail } from "./daydetail.module";
-import { ShoppingList } from "./shoppinglist.module";
+
 
 export class Book {
   constructor(

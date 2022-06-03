@@ -24,8 +24,8 @@ export class DayDetailPage implements OnInit {
         this.navCtrl.navigateBack('/smoothie-guide/tabs/guide');
         return;
       }
-      this.dayDetail = this.smoothieGuideService.getDayDetox(paramMap.get('dayId'))
-    })
+      this.dayDetail = this.smoothieGuideService.getDayDetox(paramMap.get('dayId'));
+    });
   }
 
 }

@@ -30,7 +30,7 @@ export class ShoppingListPage implements OnInit {
       else{
         this.shoppingList = this.smoothieGuideService.shoppingListSmoothie[0];
       }
-    })
+    });
   };
 }
 
