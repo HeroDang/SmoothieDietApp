@@ -10,26 +10,15 @@ export class SmoothieGuideService {
   private _bookDetox = new Book(
     'b3',
     '3 Day Detox',
-    [
-      'Detox Shopping List',
-      'Day 1: Green Apple Parsley',
-      'Day 2: Pineapple Mint',
-      'Day 3: Ginger Raspberry',
-    ]
+    // this.shoppingListDetox,
+    // this.dayDetox,
   )
 
   private _bookSmoothie = new Book(
     'b21',
     'The Smoothie Diet',
-    [
-      'Week 1 Shopping List',
-      'Day 1',
-      'Day 2',
-      'Day 3',
-      'Day 4',
-      'Day 5',
-      'Day 6',
-    ]
+    // this.shoppingListSmoothie,
+    // this.dayDetox,
   )
 
   private _shoppingListDetox = new ShoppingList(
@@ -56,53 +45,81 @@ export class SmoothieGuideService {
     ]
   )
 
-  private _shoppingListSmoothie = new ShoppingList(
-    '21day',
-    'Week 1 Shopping List',
-    this._bookSmoothie.id,
-    [
-      {
-        title: 'Veggies',
-        component: ['Spinach (4 cups/4oz/120g)',
-        'Kale (4 cups/4oz/120g)',
-        'Romaine (4 cups/4oz/120g)',
-        'Avocado (1)']
-      },
-      {
-        title: 'Fruits',
-        component: ['Medium Bananas (7)',
-        'Dates (7)',
-        'Orange (1)',
-        'Mango (2)',
-        'Medium Green Apple (1)',
-        'Medium Pear (1)',
-        'Cantaloupe (1 cup/5oz)',
-        'Lime (1)',
-        ]
-      }
-    ]
-  )
+  private _shoppingListSmoothie: ShoppingList[] = [
+    new ShoppingList(
+      'w1',
+      'Week 1 Shopping List',
+      this._bookSmoothie.id,
+      [
+        {
+          title: 'Veggies',
+          component: ['Spinach (4 cups/4oz/120g)',
+          'Kale (4 cups/4oz/120g)',
+          'Romaine (4 cups/4oz/120g)',
+          'Avocado (1)']
+        },
+        {
+          title: 'Fruits',
+          component: ['Medium Bananas (7)',
+          'Dates (7)',
+          'Orange (1)',
+          'Mango (2)',
+          'Medium Green Apple (1)',
+          'Medium Pear (1)',
+          'Cantaloupe (1 cup/5oz)',
+          'Lime (1)',
+          ]
+        },
+        {
+          title: 'Pantry',
+          component: ['Rolled Oats (2 cups/200g)',
+          'Unsweeted Almond Butter (2 tbsp)',
+          'Natural Peanut Butter (1 tbsp)',
+          'Pumpkin Puree (1-15oz can)',
+          'Cayenne Pepper ( I small container)',
+          'Cinnamon (1 small container)',
+          'Unsweeteed Coconut (4 tbsp) (Flakes or Shredded)',
+          'Coconut Oil (2 tsp)',
+          'Ground Flax Seed (2 tbsp/16oz)',
+          'Wheat Germ (2 tbsp/16oz)',
+          'Vanilla Extract (1 small container)',
+          'Honey or Stevia (as needed)',
+          'Unsweetened Cocoa Powder (1 tbsp)',
+          'Nutmeg',
+          'Ground Cardamom',
+          'Ground Ginger',
+          ]
+        }
+      ]
+    )
+  ]
 
   private _dayDetox: DayDetail[] = [
     new DayDetail(
       'd1',
       'Day 1: Green Apple Parsley',
       'Parsley is naturally detoxifying herb that has plenty of nutrients, and a zippy flavor. You wouldn’t think it would be good in a smoothie, but paired with the right ingredients, it’s delicious. Serves 1',
-      'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
+      // 'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
       'url image',
       this.bookDetox.id,
       [
-        '1 cup/8oz filtered water',
-        '1 handful (1cup/1oz/30g) spinach',
-        '2 tbsp ground flax seed',
-        '1 tbsp ground chia seeds',
-        '1 green apple',
-        '1/2 ripened pear',
-        '1/4 cup parsley',
-        '1/2 cup ice',
-      ],
-      [
-        'Put all of the ingredients in a blender and blend until smooth and creamy'
+        {
+          title: 'Green Apple Parsley',
+          introduce: 'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
+          ingredients:[
+            '1 cup/8oz filtered water',
+            '1 handful (1cup/1oz/30g) spinach',
+            '2 tbsp ground flax seed',
+            '1 tbsp ground chia seeds',
+            '1 green apple',
+            '1/2 ripened pear',
+            '1/4 cup parsley',
+            '1/2 cup ice',
+          ],
+          directions:[
+            'Put all of the ingredients in a blender and blend until smooth and creamy'
+          ],
+        }
       ]
     ),
 
@@ -110,21 +127,27 @@ export class SmoothieGuideService {
       'd2',
       'Day 2: Pineapple Mint',
       'Parsley is naturally detoxifying herb that has plenty of nutrients, and a zippy flavor. You wouldn’t think it would be good in a smoothie, but paired with the right ingredients, it’s delicious. Serves 1',
-      'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
+      // 'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
       'url image',
       this.bookDetox.id,
       [
-        '1 cup/8oz filtered water',
-        '1 handful (1cup/1oz/30g) spinach',
-        '2 tbsp ground flax seed',
-        '1 tbsp ground chia seeds',
-        '1 green apple',
-        '1/2 ripened pear',
-        '1/4 cup parsley',
-        '1/2 cup ice',
-      ],
-      [
-        'Put all of the ingredients in a blender and blend until smooth and creamy'
+        {
+          title: 'Pineapple Mint',
+          introduce: 'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
+          ingredients:[
+            '1 cup/8oz filtered water',
+            '1 handful (1cup/1oz/30g) spinach',
+            '2 tbsp ground flax seed',
+            '1 tbsp ground chia seeds',
+            '1 green apple',
+            '1/2 ripened pear',
+            '1/4 cup parsley',
+            '1/2 cup ice',
+          ],
+          directions:[
+            'Put all of the ingredients in a blender and blend until smooth and creamy'
+          ],
+        }
       ]
     ),
 
@@ -132,23 +155,29 @@ export class SmoothieGuideService {
       'd3',
       'Day 3: Ginger Raspberry',
       'Parsley is naturally detoxifying herb that has plenty of nutrients, and a zippy flavor. You wouldn’t think it would be good in a smoothie, but paired with the right ingredients, it’s delicious. Serves 1',
-      'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
+      // 'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
       'url image',
       this.bookDetox.id,
       [
-        '1 cup/8oz filtered water',
-        '1 handful (1cup/1oz/30g) spinach',
-        '2 tbsp ground flax seed',
-        '1 tbsp ground chia seeds',
-        '1 green apple',
-        '1/2 ripened pear',
-        '1/4 cup parsley',
-        '1/2 cup ice',
-      ],
-      [
-        'Put all of the ingredients in a blender and blend until smooth and creamy'
+        {
+          title: 'Ginger Raspberry',
+          introduce: 'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
+          ingredients:[
+            '1 cup/8oz filtered water',
+            '1 handful (1cup/1oz/30g) spinach',
+            '2 tbsp ground flax seed',
+            '1 tbsp ground chia seeds',
+            '1 green apple',
+            '1/2 ripened pear',
+            '1/4 cup parsley',
+            '1/2 cup ice',
+          ],
+          directions:[
+            'Put all of the ingredients in a blender and blend until smooth and creamy'
+          ],
+        }
       ]
-    )
+    ),
   ];
 
   constructor() {

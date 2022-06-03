@@ -20,11 +20,16 @@ export class ShoppingListPage implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(paramMap => {
-      if (!paramMap.has('listId')) {
+      if (!paramMap.has('bookId') || !paramMap.has('listId')) {
         this.navCtrl.navigateBack('/smoothie-guide/tabs/guide');
         return;
       }
-      this.shoppingList = this.smoothieGuideService.shoppingListDetox;
+      if(paramMap.get('bookId') === 'b3'){
+        this.shoppingList = this.smoothieGuideService.shoppingListDetox;
+      }
+      else{
+        this.shoppingList = this.smoothieGuideService.shoppingListSmoothie[0];
+      }
     })
   };
 }

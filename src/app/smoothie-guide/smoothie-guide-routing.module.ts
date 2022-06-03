@@ -37,15 +37,15 @@ const routes: Routes = [
             loadChildren: () => import('./guide/guide.module').then( m => m.GuidePageModule)
           },
           {
-            path: 'shppinglist/:listId',
+            path: 'shppinglist/:bookId/:listId',
             loadChildren: () => import('./guide/shopping-list/shopping-list.module').then((m) => m.ShoppingListPageModule),
           },
           {
-            path: 'daydetail/:dayId',
+            path: 'daydetail/:bookId/:dayId',
             loadChildren: () => import('./guide/day-detail/day-detail.module').then((m) => m.DayDetailPageModule),
           },
           {
-            path: ':dayof21Id',
+            path: ':bookId/:dayof21Id',
             loadChildren: () => import('./guide/dayof21days/dayof21days.module').then((m) => m.Dayof21daysPageModule),
           },
         ],

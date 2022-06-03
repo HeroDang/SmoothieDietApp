@@ -20,7 +20,7 @@ export class DayDetailPage implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(paramMap => {
-      if (!paramMap.has('dayId')) {
+      if (!paramMap.has('bookId') ||!paramMap.has('dayId')) {
         this.navCtrl.navigateBack('/smoothie-guide/tabs/guide');
         return;
       }

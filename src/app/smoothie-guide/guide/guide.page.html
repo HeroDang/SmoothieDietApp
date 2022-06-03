@@ -6,11 +6,13 @@
 
 <ion-content>
   <ion-grid>
+    <!-- 3 Day Detox -->
     <ion-row>
       <ion-col size-sm="6" offset-sm="3">
         <ion-list>
-          <ion-list-header (click)="onShow3Day()">{{bookName}}</ion-list-header>
+          <ion-list-header (click)="onShow3Day()">3 Day Detox</ion-list-header>
           <div *ngIf="show3Day">
+            <!-- Detox Shopping List -->
             <ion-item
              lines="none"
              class="ion-margin-top"
@@ -20,12 +22,13 @@
               'tabs',
               'guide',
               'shppinglist',
-              bookDetox.id
-             ]"
-            >
-              <ion-label>{{titles[0]}}</ion-label>
+              shoppingListDetox.bookId,
+              shoppingListDetox.id
+             ]">
+              <ion-label>{{shoppingListDetox.title}}</ion-label>
             </ion-item>
 
+            <!-- Day of 3 Day Detox -->
             <ion-item
               *ngFor="let dayDetox of dayDetoxs"
               lines="none"
@@ -36,6 +39,7 @@
               'tabs',
               'guide',
               'daydetail',
+              dayDetox.bookId,
               dayDetox.id
              ]"
             >
@@ -46,13 +50,44 @@
       </ion-col>
     </ion-row>
 
+    <!-- 21 Day Smoothie Diet -->
     <ion-row>
       <ion-col size-sm="6" offset-sm="3">
         <ion-list>
-          <ion-list-header (click)="onShow21Day()">{{bookName2}}</ion-list-header>
+          <ion-list-header (click)="onShow21Day()">21 Day Smoothie Diet</ion-list-header>
           <div *ngIf="show21Day">
-            <ion-item *ngFor="let title of titles1" lines="none" class="ion-margin-top">
-              <ion-label>{{title}}</ion-label>
+            <!-- Detox Shopping List -->
+            <ion-item
+            lines="none"
+            class="ion-margin-top"
+            [routerLink]="[
+            '/',
+            'smoothie-guide',
+            'tabs',
+            'guide',
+            'shppinglist',
+            shoppingListSmoothie.bookId,
+            shoppingListSmoothie.id
+            ]">
+            <ion-label>{{shoppingListSmoothie.title}}</ion-label>
+            </ion-item>
+
+            <!-- Day of 3 Day Detox -->
+            <ion-item
+            *ngFor="let dayDetox of dayDetoxs"
+            lines="none"
+            class="ion-margin-top"
+            [routerLink]="[
+            '/',
+            'smoothie-guide',
+            'tabs',
+            'guide',
+            'daydetail',
+            dayDetox.bookId,
+            dayDetox.id
+            ]"
+            >
+            <ion-label>{{dayDetox.title}}</ion-label>
             </ion-item>
           </div>
         </ion-list>
