@@ -11,6 +11,8 @@ import { SmoothieGuideService } from '../../smoothie-guide.service';
 })
 export class DayDetailPage implements OnInit {
   dayDetail: DayDetail;
+  smoothie: {
+  };
 
   constructor(
     private navCtrl: NavController,
@@ -20,11 +22,16 @@ export class DayDetailPage implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(paramMap => {
-      if (!paramMap.has('bookId') ||!paramMap.has('dayId')) {
+      if (!paramMap.has('bookId') ||!paramMap.has('dayId') ||!paramMap.has('smoothieId')) {
         this.navCtrl.navigateBack('/smoothie-guide/tabs/guide');
         return;
       }
       this.dayDetail = this.smoothieGuideService.getDayDetox(paramMap.get('dayId'));
+      for(const smo of this.dayDetail.smoothie){
+        if(smo.id === paramMap.get('smoothieId')){
+          this.smoothie = smo;
+        }
+      }
     });
   }
 
