@@ -40,7 +40,8 @@
               'guide',
               'daydetail',
               dayDetox.bookId,
-              dayDetox.id
+              dayDetox.id,
+              dayDetox.smoothie[0].id
              ]"
             >
               <ion-label>{{dayDetox.title}}</ion-label>
@@ -56,7 +57,7 @@
         <ion-list>
           <ion-list-header (click)="onShow21Day()">21 Day Smoothie Diet</ion-list-header>
           <div *ngIf="show21Day">
-            <!-- Detox Shopping List -->
+            <!-- 21 Day Smoothie Diet Shopping List -->
             <ion-item
             lines="none"
             class="ion-margin-top"
@@ -72,7 +73,7 @@
             <ion-label>{{shoppingListSmoothie.title}}</ion-label>
             </ion-item>
 
-            <!-- Day of 3 Day Detox -->
+            <!-- Day of 21 Day Smoothie Diet -->
             <ion-item
             *ngFor="let dayDetox of dayDetoxs"
             lines="none"
@@ -82,7 +83,6 @@
             'smoothie-guide',
             'tabs',
             'guide',
-            'daydetail',
             dayDetox.bookId,
             dayDetox.id
             ]"

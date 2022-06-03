@@ -41,7 +41,7 @@ const routes: Routes = [
             loadChildren: () => import('./guide/shopping-list/shopping-list.module').then((m) => m.ShoppingListPageModule),
           },
           {
-            path: 'daydetail/:bookId/:dayId',
+            path: 'daydetail/:bookId/:dayId/:smoothieId',
             loadChildren: () => import('./guide/day-detail/day-detail.module').then((m) => m.DayDetailPageModule),
           },
           {
