@@ -19,7 +19,7 @@ export class Dayof21daysPage implements OnInit {
     introduce: string;
     ingredients: string[];
     directions: string[];
-  };
+  }[];
 
   constructor(
     private navCtrl: NavController,
@@ -34,6 +34,7 @@ export class Dayof21daysPage implements OnInit {
         return;
       }
       this.day = this.smoothieGuideService.getDayDiet(paramMap.get('dayof21Id'));
+      this.smoothie = this.day.smoothie;
     });
   }
 

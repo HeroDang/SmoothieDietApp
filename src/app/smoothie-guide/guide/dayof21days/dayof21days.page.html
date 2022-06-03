@@ -3,11 +3,15 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/smoothie-guide/tabs/guide"></ion-back-button>
     </ion-buttons>
-
-    <ion-title>dayof21days</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-list>
+    <ion-text id="tit">21 DAY SMOOTHIE DIET</ion-text>
+    <ion-text id="day">{{day.title}}</ion-text>
+  </ion-list>
+  <ion-item *ngFor="let i of smoothie">
+    <ion-text>{{i.title}}</ion-text>
+  </ion-item>
 </ion-content>
