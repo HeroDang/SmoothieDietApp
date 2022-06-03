@@ -1,12 +1,18 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="m1"></ion-menu-button>
+      <!-- <ion-button (click)="onOpenMenu()">
+        Open
+      </ion-button> -->
+    </ion-buttons>
     <ion-title>E-book</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-    <ion-buttons>
+    <ion-buttons class="button-ebook">
 
       <ion-button routerLink="/smoothie-guide/tabs/e-book/bookdetox">3 Day Detox</ion-button>
 

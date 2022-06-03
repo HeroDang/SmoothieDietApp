@@ -185,6 +185,7 @@ export class SmoothieGuideService {
     ),
   ];
 
+  //Day of 21 day smoothie diet
   private _dayDiet: DayDetail[] = [
     new DayDetail(
       'd1',
@@ -194,7 +195,27 @@ export class SmoothieGuideService {
       [
         {
           id: 'sm1',
-          title: 'Ginger Raspberry',
+          title: 'Chocolate Cherry',
+          description: 'Parsley is naturally detoxifying herb that has plenty of nutrients, and a zippy flavor. You wouldn’t think it would be good in a smoothie, but paired with the right ingredients, it’s delicious. Serves 1',
+          imageUrl: 'url image',
+          introduce: 'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
+          ingredients:[
+            '1 cup/8oz filtered water',
+            '1 handful (1cup/1oz/30g) spinach',
+            '2 tbsp ground flax seed',
+            '1 tbsp ground chia seeds',
+            '1 green apple',
+            '1/2 ripened pear',
+            '1/4 cup parsley',
+            '1/2 cup ice',
+          ],
+          directions:[
+            'Put all of the ingredients in a blender and blend until smooth and creamy'
+          ],
+        },
+        {
+          id: 'sm2',
+          title: 'Tropical Blast',
           description: 'Parsley is naturally detoxifying herb that has plenty of nutrients, and a zippy flavor. You wouldn’t think it would be good in a smoothie, but paired with the right ingredients, it’s delicious. Serves 1',
           imageUrl: 'url image',
           introduce: 'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
@@ -223,7 +244,27 @@ export class SmoothieGuideService {
       [
         {
           id: 'sm1',
-          title: 'Ginger Raspberry',
+          title: 'Iced Pumpkin',
+          description: 'Parsley is naturally detoxifying herb that has plenty of nutrients, and a zippy flavor. You wouldn’t think it would be good in a smoothie, but paired with the right ingredients, it’s delicious. Serves 1',
+          imageUrl: 'url image',
+          introduce: 'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
+          ingredients:[
+            '1 cup/8oz filtered water',
+            '1 handful (1cup/1oz/30g) spinach',
+            '2 tbsp ground flax seed',
+            '1 tbsp ground chia seeds',
+            '1 green apple',
+            '1/2 ripened pear',
+            '1/4 cup parsley',
+            '1/2 cup ice',
+          ],
+          directions:[
+            'Put all of the ingredients in a blender and blend until smooth and creamy'
+          ],
+        },
+        {
+          id: 'sm2',
+          title: 'Caramel Apple',
           description: 'Parsley is naturally detoxifying herb that has plenty of nutrients, and a zippy flavor. You wouldn’t think it would be good in a smoothie, but paired with the right ingredients, it’s delicious. Serves 1',
           imageUrl: 'url image',
           introduce: 'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
@@ -252,7 +293,27 @@ export class SmoothieGuideService {
       [
         {
           id: 'sm1',
-          title: 'Ginger Raspberry',
+          title: 'Peanut Butter Bliss',
+          description: 'Parsley is naturally detoxifying herb that has plenty of nutrients, and a zippy flavor. You wouldn’t think it would be good in a smoothie, but paired with the right ingredients, it’s delicious. Serves 1',
+          imageUrl: 'url image',
+          introduce: 'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
+          ingredients:[
+            '1 cup/8oz filtered water',
+            '1 handful (1cup/1oz/30g) spinach',
+            '2 tbsp ground flax seed',
+            '1 tbsp ground chia seeds',
+            '1 green apple',
+            '1/2 ripened pear',
+            '1/4 cup parsley',
+            '1/2 cup ice',
+          ],
+          directions:[
+            'Put all of the ingredients in a blender and blend until smooth and creamy'
+          ],
+        },
+        {
+          id: 'sm2',
+          title: 'Super Pumpkin',
           description: 'Parsley is naturally detoxifying herb that has plenty of nutrients, and a zippy flavor. You wouldn’t think it would be good in a smoothie, but paired with the right ingredients, it’s delicious. Serves 1',
           imageUrl: 'url image',
           introduce: 'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
