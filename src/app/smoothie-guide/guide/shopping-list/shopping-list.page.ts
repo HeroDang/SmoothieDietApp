@@ -10,7 +10,7 @@ import { SmoothieGuideService } from '../../smoothie-guide.service';
   styleUrls: ['./shopping-list.page.scss'],
 })
 export class ShoppingListPage implements OnInit {
-  shoppingList: ShoppingList
+  shoppingList: ShoppingList;
 
   constructor(
     private navCtrl: NavController,
@@ -25,7 +25,7 @@ export class ShoppingListPage implements OnInit {
         return;
       }
       this.shoppingList = this.smoothieGuideService.shoppingListDetox;
-    })
+    });
   };
 }
 

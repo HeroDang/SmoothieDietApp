@@ -9,5 +9,19 @@
 </ion-header>
 
 <ion-content>
+  <ion-grid>
+    <ion-row *ngFor="let ingredientsItem of shoppingList.ingredients">
+      <ion-col size-sm="6" offset-sm="3">
+        <ion-list id ="green">
+          <ion-list-header>{{ingredientsItem.title}}</ion-list-header>
+          <ion-text *ngFor="let text of ingredientsItem.component">{{text}}</ion-text>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+  <ion-button color="white">
+    Check
+  </ion-button>
 
 </ion-content>
