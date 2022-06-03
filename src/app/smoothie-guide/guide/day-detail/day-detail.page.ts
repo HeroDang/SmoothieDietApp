@@ -21,6 +21,7 @@ export class DayDetailPage implements OnInit {
     directions: string[];
   };
 
+showCheckbox = false;
   constructor(
     private navCtrl: NavController,
     private route: ActivatedRoute,
@@ -41,6 +42,9 @@ export class DayDetailPage implements OnInit {
       }
       console.log(this.smoothie);
     });
+  }
+  onShowCheckbox(){
+    this.showCheckbox = !this.showCheckbox;
   }
 
 }

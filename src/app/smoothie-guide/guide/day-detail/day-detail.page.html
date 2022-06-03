@@ -15,14 +15,16 @@
   </ion-text>
   <ion-list id ="ingredients" >
     <ion-list-header>Ingredients</ion-list-header>
-    <ion-text *ngFor="let i of smoothie.ingredients">{{i}}</ion-text>
+    <ion-item *ngFor="let i of smoothie.ingredients">
+      <ion-text>{{i}}</ion-text>
+      <ion-checkbox color="primary" checked slot="start" *ngIf="showCheckbox" checked="false"></ion-checkbox>
+    </ion-item>
   </ion-list>
   <ion-list id="directions" >
     <ion-list-header>Directions</ion-list-header>
     <ion-text *ngFor="let i of smoothie.directions">{{i}}</ion-text>
   </ion-list>
-
-  <ion-button color="white">
+  <ion-button color="white" (click)="onShowCheckbox()">
     Check
   </ion-button>
 

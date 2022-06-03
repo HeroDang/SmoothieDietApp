@@ -14,12 +14,15 @@
       <ion-col size-sm="6" offset-sm="3">
         <ion-list id ="green">
           <ion-list-header>{{ingredientsItem.title}}</ion-list-header>
-          <ion-text *ngFor="let text of ingredientsItem.component">{{text}}</ion-text>
+          <ion-item *ngFor="let text of ingredientsItem.component">
+            <ion-text>{{text}}</ion-text>
+            <ion-checkbox color="primary" checked slot="start" *ngIf="showCheckbox" checked="false"></ion-checkbox>
+          </ion-item>
         </ion-list>
       </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-button color="white">
+  <ion-button color="white" (click)="onShowCheckbox()">
     Check
   </ion-button>
 

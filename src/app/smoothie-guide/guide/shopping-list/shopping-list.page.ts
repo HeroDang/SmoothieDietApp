@@ -12,6 +12,9 @@ import { SmoothieGuideService } from '../../smoothie-guide.service';
 export class ShoppingListPage implements OnInit {
   shoppingList: ShoppingList;
 
+  showCheckbox = false;
+
+
   constructor(
     private navCtrl: NavController,
     private route: ActivatedRoute,
@@ -32,6 +35,9 @@ export class ShoppingListPage implements OnInit {
       }
     });
   };
+  onShowCheckbox(){
+    this.showCheckbox = !this.showCheckbox;
+  }
 }
 
 
