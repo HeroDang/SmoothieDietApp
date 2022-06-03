@@ -21,13 +21,25 @@
               'guide',
               'shppinglist',
               bookDetox.id
-            ]"
+             ]"
             >
               <ion-label>{{titles[0]}}</ion-label>
             </ion-item>
 
-            <ion-item *ngFor="let title of titles.slice(1)" lines="none" class="ion-margin-top">
-              <ion-label>{{title}}</ion-label>
+            <ion-item
+              *ngFor="let dayDetox of dayDetoxs"
+              lines="none"
+              class="ion-margin-top"
+              [routerLink]="[
+              '/',
+              'smoothie-guide',
+              'tabs',
+              'guide',
+              'daydetail',
+              dayDetox.id
+             ]"
+            >
+              <ion-label>{{dayDetox.title}}</ion-label>
             </ion-item>
           </div>
         </ion-list>
