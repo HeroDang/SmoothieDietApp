@@ -9,7 +9,7 @@
     <ion-row>
       <ion-col size-sm="6" offset-sm="3">
         <ion-list>
-          <ion-list-header (click)="onShow3Day()">3 Day Detox</ion-list-header>
+          <ion-list-header (click)="onShow3Day()">{{bookName}}</ion-list-header>
           <div *ngIf="show3Day">
             <ion-item *ngFor="let title of titles" lines="none" class="ion-margin-top">
               <ion-label>{{title}}</ion-label>
@@ -22,10 +22,12 @@
     <ion-row>
       <ion-col size-sm="6" offset-sm="3">
         <ion-list>
-          <ion-list-header>21 Day Smoothie Diet</ion-list-header>
-          <ion-item *ngFor="let title of titles1" lines="none" class="ion-margin-top">
-            <ion-label>{{title}}</ion-label>
-          </ion-item>
+          <ion-list-header (click)="onShow21Day()">{{bookName2}}</ion-list-header>
+          <div *ngIf="show21Day">
+            <ion-item *ngFor="let title of titles1" lines="none" class="ion-margin-top">
+              <ion-label>{{title}}</ion-label>
+            </ion-item>
+          </div>
         </ion-list>
       </ion-col>
     </ion-row>

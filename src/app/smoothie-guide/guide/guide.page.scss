@@ -13,6 +13,10 @@ ion-list{
   width: 100%;
 }
 
+ion-list-header{
+  font-weight: bold;
+}
+
 ion-list ion-item{
   --color-hover: red;
   --color:  #06D6A0;
@@ -23,6 +27,6 @@ ion-list ion-item{
   --border-radius: 10px;
   padding: 10px;
   text-align: center;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
 }

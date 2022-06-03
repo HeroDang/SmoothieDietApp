@@ -15,6 +15,18 @@ const routes: Routes = [
             path: '',
             loadChildren: () => import('./e-book/e-book.module').then( m => m.EBookPageModule)
           },
+          {
+            path: 'bookdetox',
+            loadChildren: () => import('./e-book/bookdetox/bookdetox.module').then( m => m.BookdetoxPageModule)
+          },
+          {
+            path: 'bookquickstart',
+            loadChildren: () => import('./e-book/bookquickstart/bookquickstart.module').then( m => m.BookquickstartPageModule)
+          },
+          {
+            path: 'booksmoothiediet',
+            loadChildren: () => import('./e-book/booksmoothiediet/booksmoothiediet.module').then( m => m.BooksmoothiedietPageModule)
+          }
         ],
       },
       {
@@ -25,7 +37,7 @@ const routes: Routes = [
             loadChildren: () => import('./guide/guide.module').then( m => m.GuidePageModule)
           },
           {
-            path: 'shppinglist',
+            path: 'shppinglist/:listId',
             loadChildren: () => import('./guide/shopping-list/shopping-list.module').then((m) => m.ShoppingListPageModule),
           },
           {

@@ -9,7 +9,27 @@ import { ShoppingList } from './shoppinglist.module';
 export class SmoothieGuideService {
   private _bookDetox = new Book(
     'b3',
-    '3 Day Detox'
+    '3 Day Detox',
+    [
+      'Detox Shopping List',
+      'Day 1: Green Apple Parsley',
+      'Day 2: Pineapple Mint',
+      'Day 3: Ginger Raspberry',
+    ]
+  )
+
+  private _bookSmoothie = new Book(
+    'b21',
+    'The Smoothie Diet',
+    [
+      'Week 1 Shopping List',
+      'Day 1',
+      'Day 2',
+      'Day 3',
+      'Day 4',
+      'Day 5',
+      'Day 6',
+    ]
   )
 
   private _shoppingListDetox = new ShoppingList(
@@ -36,7 +56,34 @@ export class SmoothieGuideService {
     ]
   )
 
-  private _dayDetoxx: DayDetail[] = [
+  private _shoppingListSmoothie = new ShoppingList(
+    '21day',
+    'Week 1 Shopping List',
+    this._bookSmoothie.id,
+    [
+      {
+        title: 'Veggies',
+        component: ['Spinach (4 cups/4oz/120g)',
+        'Kale (4 cups/4oz/120g)',
+        'Romaine (4 cups/4oz/120g)',
+        'Avocado (1)']
+      },
+      {
+        title: 'Fruits',
+        component: ['Medium Bananas (7)',
+        'Dates (7)',
+        'Orange (1)',
+        'Mango (2)',
+        'Medium Green Apple (1)',
+        'Medium Pear (1)',
+        'Cantaloupe (1 cup/5oz)',
+        'Lime (1)',
+        ]
+      }
+    ]
+  )
+
+  private _dayDetox: DayDetail[] = [
     new DayDetail(
       'd1',
       'Day 1: Green Apple Parsley',
@@ -67,11 +114,21 @@ export class SmoothieGuideService {
     return this._bookDetox;
   }
 
+  get bookSmoothie(){
+    return this._bookSmoothie;
+  }
+
   get shoppingListDetox(){
     return this._shoppingListDetox;
   }
 
-  get dayDetox(){
-    return this._dayDetoxx;
+  get shoppingListSmoothie(){
+    return this._shoppingListSmoothie;
   }
+
+  get dayDetox(){
+    return this._dayDetox;
+  }
+
+
 }
