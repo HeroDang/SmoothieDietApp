@@ -34,13 +34,18 @@ showCheckbox = false;
         this.navCtrl.navigateBack('/smoothie-guide/tabs/guide');
         return;
       }
-      this.dayDetail = this.smoothieGuideService.getDayDetox(paramMap.get('dayId'));
-      for(const smo of this.dayDetail.smoothie){
+
+      if(paramMap.get('bookId') === 'b3'){
+        this.dayDetail = this.smoothieGuideService.getDayDetox(paramMap.get('dayId'));
+      }else{
+        this.dayDetail = this.smoothieGuideService.getDayDiet(paramMap.get('dayId'))
+      }
+
+      for(let smo of this.dayDetail.smoothie){
         if(smo.id === paramMap.get('smoothieId')){
-          this.smoothie = {...smo};
+          this.smoothie = smo;
         }
       }
-      console.log(this.smoothie);
     });
   }
   onShowCheckbox(){

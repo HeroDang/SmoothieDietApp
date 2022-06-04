@@ -1,10 +1,10 @@
 ion-toolbar{
     --background: #06D6A0;
     --color: white;
-    --min-height: 50px 
+    --min-height: 50px
 
 }
-  
+
 ion-toolbar ion-title{
     font-size: 16px;
     font-weight: bold;
@@ -31,12 +31,19 @@ ion-list {
     flex-direction:column;
     width: 100%;
 }
+
+div{
+  border: 5px solid #06D6A0;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 10% 5%;
+}
+
 #s1 {
     font-size: 30px;
     display:flex;
     flex-direction:column;
     text-align: center;
-    padding:15%;
 }
 
 #s2 {
@@ -44,7 +51,6 @@ ion-list {
     display:flex;
     flex-direction:column;
     text-align: center;
-    padding:15%;
 }
 
 #t1 {
@@ -54,9 +60,15 @@ ion-list {
 #t2 {
     font-weight: bold;
 }
+
 #l1 {
     color:red;
 }
+
+ion-text{
+  margin-top: 5%;
+}
+
 ion-label {
     color:red;
 }
