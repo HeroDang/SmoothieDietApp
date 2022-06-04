@@ -11,7 +11,12 @@
     <ion-text id="tit">21 DAY SMOOTHIE DIET</ion-text>
     <ion-text id="day">{{day.title}}</ion-text>
   </ion-list>
-  <ion-item *ngFor="let i of smoothie">
-    <ion-text>{{i.title}}</ion-text>
-  </ion-item>
+  <div id="s1">
+    <ion-label id="l1">Smoothie 1 </ion-label>
+    <ion-text id="t1"> {{smoothie[0].title}}</ion-text>
+  </div>
+  <div id="s2">
+    <ion-label>Smoothie 2 </ion-label>
+    <ion-text id="t2"> {{smoothie[1].title}}</ion-text>
+  </div>
 </ion-content>

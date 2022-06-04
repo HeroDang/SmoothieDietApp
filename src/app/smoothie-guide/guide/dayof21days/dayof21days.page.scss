@@ -31,3 +31,32 @@ ion-list {
     flex-direction:column;
     width: 100%;
 }
+#s1 {
+    font-size: 30px;
+    display:flex;
+    flex-direction:column;
+    text-align: center;
+    padding:15%;
+}
+
+#s2 {
+    font-size: 30px;
+    display:flex;
+    flex-direction:column;
+    text-align: center;
+    padding:15%;
+}
+
+#t1 {
+    font-weight: bold;
+}
+
+#t2 {
+    font-weight: bold;
+}
+#l1 {
+    color:red;
+}
+ion-label {
+    color:red;
+}
