@@ -189,9 +189,9 @@ export class SmoothieGuideService {
   private _dayDiet: DayDetail[] = [
     new DayDetail(
       'd1',
-      'Day 1',
+      'Day 1 smoothie',
       // 'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
-      this.bookDetox.id,
+      this._bookSmoothie.id,
       [
         {
           id: 'sm1',
@@ -240,7 +240,7 @@ export class SmoothieGuideService {
       'd2',
       'Day 2',
       // 'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
-      this.bookDetox.id,
+      this._bookSmoothie.id,
       [
         {
           id: 'sm1',
@@ -289,7 +289,7 @@ export class SmoothieGuideService {
       'd3',
       'Day 3',
       // 'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
-      this.bookDetox.id,
+      this._bookSmoothie.id,
       [
         {
           id: 'sm1',
