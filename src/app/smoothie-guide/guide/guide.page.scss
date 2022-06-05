@@ -17,9 +17,18 @@ ion-list{
   width: 100%;
 }
 
-ion-list-header{
+ion-list .header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+ion-list-header,.header ion-icon{
+  font-size: 26px;
   font-weight: bold;
 }
+
 
 ion-list ion-item{
   --color-hover: red;

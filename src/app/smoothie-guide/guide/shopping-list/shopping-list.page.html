@@ -4,12 +4,16 @@
       <ion-back-button defaultHref="/smoothie-guide/tabs/guide"></ion-back-button>
     </ion-buttons>
 
-    <ion-title>{{shoppingList.title}}</ion-title>
+    <ion-title>{{ isLoading ? 'Loading...' : shoppingList.title}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-grid>
+  <div *ngIf="isLoading" class="ion-text-center">
+    <ion-spinner color="primary"></ion-spinner>
+  </div>
+
+  <ion-grid *ngIf="!isLoading">
     <ion-row *ngFor="let ingredientsItem of shoppingList.ingredients">
       <ion-col size-sm="6" offset-sm="3">
         <ion-list id ="green">
@@ -23,7 +27,7 @@
     </ion-row>
   </ion-grid>
 
-  <ion-button class="btn" color="white" (click)="onShowCheckbox()">
+  <ion-button *ngIf="!isLoading" class="btn" color="white" (click)="onShowCheckbox()">
     Check
   </ion-button>
 </ion-content>

@@ -1,10 +1,10 @@
 ion-toolbar{
     --background: #06D6A0;
     --color: white;
-    --min-height: 50px 
+    --min-height: 50px
 
 }
-  
+
 ion-toolbar ion-title{
     font-size: 16px;
     font-weight: bold;
@@ -12,6 +12,10 @@ ion-toolbar ion-title{
 
 ion-back-button {
     color:white;
+}
+
+ion-grid{
+  margin-bottom: 15%;
 }
 
 #day1 {
@@ -33,7 +37,7 @@ ion-list{
     flex-direction:column;
     width: 100%;
 }
-  
+
 ion-list-header{
     font-size: 30px;
     font-weight: bold;

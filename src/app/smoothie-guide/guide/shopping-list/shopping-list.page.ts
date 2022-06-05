@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
+import { Subscription } from 'rxjs';
 import { ShoppingList } from '../../shoppinglist.module';
 import { SmoothieGuideService } from '../../smoothie-guide.service';
 
@@ -9,10 +10,11 @@ import { SmoothieGuideService } from '../../smoothie-guide.service';
   templateUrl: './shopping-list.page.html',
   styleUrls: ['./shopping-list.page.scss'],
 })
-export class ShoppingListPage implements OnInit {
+export class ShoppingListPage implements OnInit, OnDestroy {
   shoppingList: ShoppingList;
-
+  shopingListSub : Subscription;
   showCheckbox = false;
+  isLoading = false;
 
 
   constructor(
@@ -27,16 +29,31 @@ export class ShoppingListPage implements OnInit {
         this.navCtrl.navigateBack('/smoothie-guide/tabs/guide');
         return;
       }
+      this.isLoading = true;
       if(paramMap.get('bookId') === 'b3'){
-        this.shoppingList = this.smoothieGuideService.shoppingListDetox;
+        this.shopingListSub = this.smoothieGuideService.getShoppingListDetox(paramMap.get('listId'))
+        .subscribe(shoppingListDetox => {
+          this.shoppingList = shoppingListDetox;
+          this.isLoading = false;
+        });
       }
       else{
-        this.shoppingList = this.smoothieGuideService.shoppingListSmoothie[0];
+        this.shopingListSub = this.smoothieGuideService.getShoppingListSmoothie(paramMap.get('listId'))
+        .subscribe(shoppingListSmoothie => {
+          this.shoppingList = shoppingListSmoothie;
+          this.isLoading = false;
+        });
       }
     });
   };
   onShowCheckbox(){
     this.showCheckbox = !this.showCheckbox;
+  }
+
+  ngOnDestroy(): void {
+    if(this.shopingListSub){
+      this.shopingListSub.unsubscribe();
+    }
   }
 }
 

@@ -4,26 +4,38 @@
       <ion-back-button defaultHref="/smoothie-guide/tabs/guide"></ion-back-button>
     </ion-buttons>
 
-    <ion-title>{{dayDetail.title}}</ion-title>
+    <ion-title>{{isLoading ? 'Loading...' : dayDetail.title}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-text id="day1">{{smoothie.title}}</ion-text>
-  <ion-text id="intro">
-    {{smoothie.description}}
-  </ion-text>
-  <ion-list id ="ingredients" >
-    <ion-list-header>Ingredients</ion-list-header>
-    <ion-item *ngFor="let i of smoothie.ingredients">
-      <ion-text>{{i}}</ion-text>
-      <ion-checkbox color="primary" checked slot="start" *ngIf="showCheckbox" checked="false"></ion-checkbox>
-    </ion-item>
-  </ion-list>
-  <ion-list id="directions" >
-    <ion-list-header>Directions</ion-list-header>
-    <ion-text *ngFor="let i of smoothie.directions">{{i}}</ion-text>
-  </ion-list>
+
+  <div *ngIf="isLoading" class="ion-text-center">
+    <ion-spinner color="primary"></ion-spinner>
+  </div>
+
+  <ion-grid *ngIf="!isLoading">
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3">
+        <ion-text id="day1">{{smoothie.title}}</ion-text>
+        <ion-text id="intro">
+          {{smoothie.description}}
+        </ion-text>
+        <ion-list id ="ingredients" >
+          <ion-list-header>Ingredients</ion-list-header>
+          <ion-item *ngFor="let i of smoothie.ingredients">
+            <ion-text>{{i}}</ion-text>
+            <ion-checkbox color="primary" checked slot="start" *ngIf="showCheckbox" checked="false"></ion-checkbox>
+          </ion-item>
+        </ion-list>
+        <ion-list id="directions" >
+          <ion-list-header>Directions</ion-list-header>
+          <ion-text *ngFor="let i of smoothie.directions">{{i}}</ion-text>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
   <ion-button color="white" (click)="onShowCheckbox()">
     Check
   </ion-button>

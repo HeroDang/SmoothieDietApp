@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
+import { Subscription } from 'rxjs';
 import { DayDetail } from '../../daydetail.module';
 import { SmoothieGuideService } from '../../smoothie-guide.service';
 
@@ -9,8 +10,9 @@ import { SmoothieGuideService } from '../../smoothie-guide.service';
   templateUrl: './day-detail.page.html',
   styleUrls: ['./day-detail.page.scss'],
 })
-export class DayDetailPage implements OnInit {
+export class DayDetailPage implements OnInit, OnDestroy {
   dayDetail: DayDetail;
+  dayDetailSub: Subscription;
   smoothie: {
     id: string;
     title: string;
@@ -20,6 +22,7 @@ export class DayDetailPage implements OnInit {
     ingredients: string[];
     directions: string[];
   };
+  isLoading = false;
 
 showCheckbox = false;
   constructor(
@@ -35,21 +38,40 @@ showCheckbox = false;
         return;
       }
 
+      this.isLoading = true;
       if(paramMap.get('bookId') === 'b3'){
-        this.dayDetail = this.smoothieGuideService.getDayDetox(paramMap.get('dayId'));
+        this.dayDetailSub = this.smoothieGuideService.getDayDetox(paramMap.get('dayId'))
+        .subscribe(dayDetox => {
+          this.dayDetail = dayDetox;
+          for(let smo of this.dayDetail.smoothie){
+            if(smo.id === paramMap.get('smoothieId')){
+              this.smoothie = smo;
+            }
+          }
+          this.isLoading = false;
+        });
       }else{
-        this.dayDetail = this.smoothieGuideService.getDayDiet(paramMap.get('dayId'))
+        this.dayDetailSub = this.smoothieGuideService.getDaySmoothie(paramMap.get('dayId'))
+        .subscribe(daySmoothie => {
+          this.dayDetail = daySmoothie;
+          for(let smo of this.dayDetail.smoothie){
+            if(smo.id === paramMap.get('smoothieId')){
+              this.smoothie = smo;
+            }
+          }
+          this.isLoading = false;
+        });
       }
 
-      for(let smo of this.dayDetail.smoothie){
-        if(smo.id === paramMap.get('smoothieId')){
-          this.smoothie = smo;
-        }
-      }
     });
   }
   onShowCheckbox(){
     this.showCheckbox = !this.showCheckbox;
   }
 
+  ngOnDestroy(): void {
+    if(this.dayDetailSub){
+      this.dayDetailSub.unsubscribe();
+    }
+  }
 }
