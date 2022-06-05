@@ -10,7 +10,11 @@ const routes: Routes = [
   {
     path: 'smoothie-guide',
     loadChildren: () => import('./smoothie-guide/smoothie-guide.module').then( m => m.SmoothieGuidePageModule)
+  },  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then( m => m.AuthPageModule)
   },
+
 ];
 
 @NgModule({

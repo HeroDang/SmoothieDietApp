@@ -1,0 +1,44 @@
+#text {
+    display:flex;
+    flex-direction:column;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    padding:20%;
+}
+#t1 {
+    font-size: 40px;
+    color:red;
+}
+#t2 {
+    font-size: 25px;
+    color:red;
+}
+ion-list {
+    ion-icon {
+        color:aqua;
+        font-size: 40px;
+    }
+    text-align: center;
+    font-weight: bold;
+    padding:7%;
+}
+ion-buttons {
+    padding:5%;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    width: 60%;
+    text-align: center;
+    #re {
+        font-size: 25px;
+        font-weight: bold;
+        background-color: yellow;
+        color:black;
+    }
+    ion-button {
+        font-size: 20px;
+        font-weight: bold;
+        color:aqua;
+    }
+}
