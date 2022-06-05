@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-sign-in',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignInPage implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router, private navCtrl: NavController) { }
 
   ngOnInit() {
   }
 
+  backLogin(){
+    this.navCtrl.navigateBack('/auth');
+  }
 }

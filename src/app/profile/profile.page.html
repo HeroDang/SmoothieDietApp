@@ -1,7 +1,10 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/smoothie-guide"></ion-back-button>
+      <ion-menu-button menu="m1"></ion-menu-button>
+      <!-- <ion-button (click)="onOpenMenu()">
+        Open
+      </ion-button> -->
     </ion-buttons>
     <ion-title>Profile</ion-title>
   </ion-toolbar>
@@ -31,9 +34,15 @@
     </ion-item>
 
     <ion-item>
-      <ion-icon name="calendar-outline"></ion-icon>
-      Date of Birth
-      <ion-text slot="end">20/05/2002</ion-text>
+      <ion-icon name="call-outline"></ion-icon>
+      Phone Number
+      <ion-text slot="end">+84 145236789</ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="book-outline"></ion-icon>
+      ID Book
+      <ion-text slot="end">Book001</ion-text>
     </ion-item>
   </ion-list>
 

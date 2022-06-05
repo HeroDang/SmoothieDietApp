@@ -1,40 +1,56 @@
 <ion-content>
+  <form>
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-list id="text">
+            <ion-text id="t1">SMOOTHIE</ion-text>
+            <ion-text id="t2">DIET APP</ion-text>
+          </ion-list>
 
-  <ion-list id="text">
-    <ion-text id="t1">SMOOTHIE</ion-text>
-    <ion-text id="t2">DIET APP</ion-text>
-  </ion-list>
+          <ion-list>
+            <ion-item>
+              <ion-icon name="person-outline"></ion-icon>
+              <ion-input placeholder="Name" type="text"></ion-input>
+            </ion-item>
 
-  <ion-list>
-    <ion-item>
-      <ion-icon name="person-outline"></ion-icon>
-      <ion-input placeholder="Name" type="text"></ion-input>
-    </ion-item>
+            <ion-item>
+              <ion-icon name="mail-outline"></ion-icon>
+              <ion-input placeholder="Email" type="email"></ion-input>
+            </ion-item>
 
-    <ion-item>
-      <ion-icon name="mail-outline"></ion-icon>
-      <ion-input placeholder="Email" type="text"></ion-input>
-    </ion-item>
+            <ion-item>
+              <ion-icon name="call-outline"></ion-icon>
+              <ion-input placeholder="Phone Number" type="number"></ion-input>
+            </ion-item>
 
-    <ion-item>
-      <ion-icon name="call-outline"></ion-icon>
-      <ion-input placeholder="Phone Number" type="number"></ion-input>
-    </ion-item>
+            <ion-item>
+              <ion-icon name="lock-closed-outline"></ion-icon>
+              <ion-input placeholder="Password" type="password"></ion-input>
+            </ion-item>
 
-    <ion-item>
-      <ion-icon name="lock-closed-outline"></ion-icon>
-      <ion-input placeholder="Password" type="text"></ion-input>
-    </ion-item>
+            <ion-item>
+              <ion-icon name="lock-closed-outline"></ion-icon>
+              <ion-input placeholder="Enter the Password" type="password"></ion-input>
+            </ion-item>
 
-    <ion-item>
-      <ion-icon name="lock-closed-outline"></ion-icon>
-      <ion-input placeholder="Enter the Password" type="text"></ion-input>
-    </ion-item>
-  </ion-list>
+            <ion-item>
+              <ion-icon name="code-outline"></ion-icon>
+              <ion-input placeholder="ID Book" type="text"></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
 
-  <ion-buttons>
-    <ion-button id="re">Register</ion-button>
-    <ion-button routerLink="/auth">Return</ion-button>
-  </ion-buttons>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-buttons>
+            <ion-button class="signin">Register</ion-button>
+            <ion-button (click)="backLogin()">Return</ion-button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 
 </ion-content>

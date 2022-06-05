@@ -1,24 +1,61 @@
 <ion-content>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-list id="text">
+            <ion-text id="t1">SMOOTHIE</ion-text>
+            <ion-text id="t2">DIET APP</ion-text>
+          </ion-list>
 
-  <ion-list id="text">
-    <ion-text id="t1">SMOOTHIE</ion-text>
-    <ion-text id="t2">DIET APP</ion-text>
-  </ion-list>
+          <ion-list>
+            <ion-item lines="none">
+              <ion-icon name="call-outline"></ion-icon>
+              <ion-input
+                placeholder="Phone Number"
+                type="number"
+                ngModel
+                name="phoneNumber"
+                required
+                #phoneNumberCtrl="ngModel"
+              ></ion-input>
+            </ion-item>
+<!--
+            <ion-item
+            *ngIf="!phoneNumberCtrl.valid && phoneNumberCtrl.touched"
+            lines="none"
+            class="sub"
+            >
+              <ion-label>Should be a valid email address</ion-label>
+            </ion-item> -->
 
-  <ion-list>
-    <ion-item>
-      <ion-icon name="call-outline"></ion-icon>
-      <ion-input placeholder="Phone Number" type="number"></ion-input>
-    </ion-item>
+            <ion-item lines="none">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+              <ion-input
+                placeholder="Password"
+                type="password"
+                ngModel
+                name="password"
+                required
+                #passwordCtrl="ngModel"
+              ></ion-input>
+            </ion-item>
 
-    <ion-item>
-      <ion-icon name="lock-closed-outline"></ion-icon>
-      <ion-input placeholder="Password" type="text"></ion-input>
-    </ion-item>
-  </ion-list>
+            <!-- <ion-item
+              *ngIf="!passwordCtrl.valid && passwordCtrl.touched"
+              lines="none"
+            >
+              <ion-label>Should at least be 6 charactes long.</ion-label>
+            </ion-item> -->
+          </ion-list>
 
-  <ion-buttons>
-    <ion-button id="sign">Sign-in</ion-button>
-    <ion-button routerLink="/auth/sign-in">Create Account</ion-button>
-  </ion-buttons>
+          <ion-buttons>
+            <ion-button class="signin" type="submit" (click)="onLogin(f)" expand="block" [disabled]="!f.valid">Sign-in</ion-button>
+            <!-- <ion-button routerLink="/auth/sign-in">Create Account</ion-button> -->
+            <!-- <ion-button (click)="onAddUser()">Add User</ion-button> -->
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>
