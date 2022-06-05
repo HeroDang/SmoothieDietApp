@@ -61,7 +61,11 @@ const routes: Routes = [
     path: '',
     redirectTo: '/smoothie-guide/tabs/e-book',
     pathMatch: 'full',
+  },  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
+
 ];
 
 @NgModule({
