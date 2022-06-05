@@ -400,7 +400,7 @@ export class SmoothieGuideService {
           'Fresh Ginger (3 inch piece)']
         }
       ]
-    )
+    );
     return this.http.post<{name: string}>('https://smoothiedietapp-default-rtdb.asia-southeast1.firebasedatabase.app/ShoppingListDetox.json',{
       ...newShoppingListSmoothie,
       id: null
@@ -414,7 +414,7 @@ export class SmoothieGuideService {
       tap(() => {
         newShoppingListSmoothie.id = generatedId;
         this._shoppingListDetox.next(newShoppingListSmoothie);
-    }))
+    }));
   }
 
   getShoppingListDetox(id: string){
@@ -429,7 +429,7 @@ export class SmoothieGuideService {
             shoppingListDetoxData.title,
             shoppingListDetoxData.bookId,
             shoppingListDetoxData.ingredients
-          )
+            )
         })
       );
   }
@@ -512,7 +512,7 @@ export class SmoothieGuideService {
             shoppingListSmoothieData.title,
             shoppingListSmoothieData.bookId,
             shoppingListSmoothieData.ingredients
-          );
+          )
         })
       );
   }
@@ -662,28 +662,27 @@ export class SmoothieGuideService {
     let generatedId: string;
     const newDayDetox = new DayDetail(
       'd1',
-      'Day 1',
+      'Day 3',
       // 'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
       this.bookDetox.id,
       [
         {
-          id: 'sm1',
-          title: 'Green Apple Parsley',
-          description: 'Parsley is naturally detoxifying herb that has plenty of nutrients, and a zippy flavor. You wouldn’t think it would be good in a smoothie, but paired with the right ingredients, it’s delicious. Serves 1',
+          id: 'sm3',
+          title: 'Ginger Raspberry',
+          description: 'Ginger is great for detoxing — it will help soothe any upset stomachs you get from adjusting your diet. When paired with raspberries, it’s a perfect combination. Serves 1',
           imageUrl: 'url image',
           introduce: 'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
           ingredients:[
-            '1 cup/8oz filtered water',
-            '1 handful (1cup/1oz/30g) spinach',
-            '2 tbsp ground flax seed',
-            '1 tbsp ground chia seeds',
-            '1 green apple',
-            '1/2 ripened pear',
-            '1/4 cup parsley',
-            '1/2 cup ice',
+            '3/4 cup/6oz unsweetened almond milk',
+            '1 cup/5oz frozen raspberries',
+            '1 handful (1cup/1oz/30g) romaine',
+            '1/2 banana',
+            '1 inch ginger peeled and grated',
+            '2 tbsp ground flax',
+            '2 tbsp unsweetened coconut flakes',
           ],
           directions:[
-            'Put all of the ingredients in a blender and blend until smooth and creamy'
+            'Put all of the ingre- dients in a blender and blend until smooth and creamy.'
           ],
         }
       ]
@@ -770,47 +769,48 @@ export class SmoothieGuideService {
     let generatedId: string;
     const newDaySmoothie = new DayDetail(
       'd1',
-      'Day 1',
+      'Day 7',
       // 'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
       this.bookSmoothie.id,
       [
         {
           id: 'sm1',
-          title: 'Chocolate Cherry',
-          description: 'Cocoa powder and dark sweet cherries make this super dark smoothie high in antioxidants and fiber, while almond milk adds creaminess. Don’t be fooled by the taste of this delicious drink; this smoothie is a meal, and a filling meal at that. Serves 1',
+          title: 'Green Energy',
+          description: 'Feeling a little bit under the weather? This potassium loaded smoothie will revitalize you while helping your body flush out toxins. And the frozen melon and banana gives an amazing frothy texture that really brings out the flavor of the melon and dampens the slightly bitter taste of the kale. Add a few mint leaves for an even fresher taste.',
           imageUrl: 'url image',
           introduce: 'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
           ingredients:[
-            '1 cup/8oz unsweetened almond milk',
-            '1 tbsp unsweetened cocoa powder',
-            '1 tbsp unsweetened almond butter',
-            '1 handful (1cup/1oz/30g) spinach',
-            '1 medium banana',
-            '1 cup/5 oz frozen dark sweet cherries',
-            '1 tsp virgin coconut oil',
-            '1 tsp honey if needed',
+            '1 cup/8oz coconut milk',
+            '1 tbsp rolled oats',
+            '1 tbsp unsweetened coconut',
+            '1 cup cantaloupe melon, diced, frozen',
+            '1 banana (chopped and frozen)',
+            '1 handful (1cup/1oz/30g) kale leaves',
+            'Juice of 1/2 lime',
           ],
           directions:[
-            '1. Add the milk, cocoa, almond butter, and spinach to your blender. Blend until smooth.',
-            '2. Add the banana, frozen cherries and coconut oil; continue blending until smooth and creamy.'
+            '1.Add the coconut milk and oats to your blender and allow it to sit for a few minutes to soften the oats.',
+            '2.Add in the coconut flakes, melon and banana. Blend for 10 seconds.'
           ],
         },
         {
           id: 'sm2',
-          title: 'Tropical Blast',
-          description: 'This smoothie is sweet and creamy, yet it’s also filling enough to enjoy for meal. Unsweetened shredded coconut adds fiber as well as plenty of coconut flavor to this delicious drink. Use coconut milk from a carton like So Delicious, Almond Breeze, or Silk instead of a can for less fat and calories. Serves 1',
+          title: 'Wonderful Berries',
+          description: 'The frozen raspberries combined with the coconut milk, rolled oats and banana give a sorbet- like texture and flavor to this smoothie. And the lettuce taste is so mild that you’ll barely notice it. For a more nut-like flavor, use toasted wheat germ and ground it in your blender. If you’re using raw wheat germ, store it in your freezer to prevent it from becoming rancid.',
           imageUrl: 'url image',
           introduce: 'If following option 1, you can blend multiple servings at once. I prefer to blend the smoothies separately instead of all at once. The above recipe is for one serving, If you want to blend 2-3 smoothies at one time, simply multiply the ingredients. To make ahead, make two in the morning, one to drink and one to take with you and then make the last one fresh at night.',
           ingredients:[
-            '1 cup/8oz coconut milk from a carton, such as Almond Breeze, So Delicious or Silk',
-            '1 handful (1cup/1oz/30g) kale leaves',
-            '1 mango, skin and pit removed',
-            '1/2 cup/3oz frozen pineapple chunks',
-            '2 tbsp unsweetened coconut (shredded or flakes)',
+            '1 cup/8oz coconut milk',
+            '2 tbsp ground wheat germ',
+            '1/4 cup rolled oats',
+            '1 handful (1cup/1oz/30g) romaine lettuce',
+            '1 medium banana',
+            '1 cup frozen raspberries',
+            '1 tsp honey if needed',
           ],
           directions:[
-            '1. Add the coconut milk, coconut flakes, and kale to your blender. Blend until smooth',
-            '2. Add the mango and frozen pineapple and continue to blend until smooth and creamy.'
+            '1. Add the coconut milk, ground wheat germ and oats to your blender and allow it to sit for a few minutes to soften the oats. Blend for 30 seconds.',
+            '2. Add the lettuce and blend for 30 more seconds.'
           ],
         }
       ]
